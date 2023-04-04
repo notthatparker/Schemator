@@ -1,19 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+
 body {
-    font-family: Arial, sans-serif;
     width: 300px;
     padding: 15px;
+    color: #565e6b;
   }
-  
+  .title{
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid #ebedec;
+  }
+
+.tabs{  padding: 20px;
+    border-bottom: 1px solid #ebedec;}
   .tabs button {
+
     background-color: #f1f1f1;
     border: none;
     cursor: pointer;
     padding: 8px 12px;
     transition: 0.3s;
+    width: 100px;
+    text-align: center;
+    background: #e9ecf1;
+    border-right: 1px solid #c1c4c9;
+    padding: 13px 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  }
+
+  .tabs button:active{
+    background: #7fc469;
+    color: #fff;
   }
   
   .tabs button:hover {
-    background-color: #ddd;
+    background-color: rgba(131, 255, 209, 0.267);
   }
   
   textarea {

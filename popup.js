@@ -20,12 +20,14 @@ document.getElementById("mainTab").addEventListener("click", () => {
         {
           target: { tabId: tabs[0].id },
           func: () => {
-            const scriptElements = document.querySelectorAll('script[type="application/ld+json"]');
+            console.log("At this point");
+            const scriptElements =  document.querySelectorAll('script[type="application/ld+json"]');
+            var jsonld = JSON.parse(document.querySelectorAll('script[type="application/ld+json"]').innerText);
             let schemaData = [];
             scriptElements.forEach((element) => {
               schemaData.push(element.textContent);
             });
-            return schemaData.join("\n\n");
+            return schemaData.join("\n\n"),jsonld;
           },
         },
         (results) => {
@@ -41,13 +43,14 @@ document.getElementById("mainTab").addEventListener("click", () => {
   
   document.getElementById("copySchema").addEventListener("click", async () => {
     const schemaOutput = document.getElementById("schemaOutput");
+    if (schemaOutput != null){
     try {
       await navigator.clipboard.writeText(schemaOutput.value);
       alert("Schema copied to clipboard!");
     } catch (error) {
       console.error("Error copying schema to clipboard:", error);
       alert("Failed to copy schema to clipboard.");
-    }
+    }}
   });
   
   document.getElementById("searchBtn").addEventListener("click", () => {
@@ -56,7 +59,7 @@ document.getElementById("mainTab").addEventListener("click", () => {
       alert("Please enter a search term.");
       return;
     }
-    fetch(`https://suggest.schemaapp.com/api/v1/suggest?q=${searchTerm}`)
+    fetch(`https://schema.org/docs/search_results.html?q==${searchTerm}`)
     .then((response) => response.json())
       .then((data) => {
         const searchResults = document.getElementById("searchResults");
