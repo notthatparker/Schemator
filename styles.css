@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 15px;
+  }
+  
+  .tabs button {
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: 0.3s;
+  }
+  
+  .tabs button:hover {
+    background-color: #ddd;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
